@@ -1,7 +1,4 @@
-
-
 class StringEqualityRank:
-    """Returns rank of strings equality"""
     def __init__(self, 
                 string1, 
                 string2, 
@@ -33,10 +30,10 @@ class StringEqualityRank:
         usedTokens = []
 
         for i in range(len(firstToken) - self.SUBTOKEN_LENGTH + 1):
-            subtokenFirst = firstToken[i:self.SUBTOKEN_LENGTH]
+            subtokenFirst = firstToken[i:i+self.SUBTOKEN_LENGTH]
 
             for j in range(len(secondToken) - self.SUBTOKEN_LENGTH + 1):
-                subtokenSecond = secondToken[j:self.SUBTOKEN_LENGTH]
+                subtokenSecond = secondToken[j:j+self.SUBTOKEN_LENGTH]
 
                 if subtokenSecond not in usedTokens and subtokenFirst == subtokenSecond:
                     equalSubtokensCount += 1
